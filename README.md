@@ -71,13 +71,12 @@ This project implements a complete OCR pipeline combining computer vision and na
 
 **Model Architecture**:
 
--CNN Backbone (Feature Extraction):
+- CNN Backbone (Feature Extraction):
 
 ```python
 x = Conv2D(64, (3,3), activation='relu', padding='same')(inputs)
 x = MaxPool2D(pool_size=(2,2))(x)
 ```
-# ... 5 convolutional blocks ...
 - Sequence Modeling (Bidirectional LSTMs):
 
 ```python
