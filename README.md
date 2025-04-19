@@ -10,7 +10,7 @@ This project implements a complete OCR pipeline combining computer vision and na
 **Objective**: Establish fundamental understanding of feature extraction and sequential data processing.
 
 **Key Implementations**:
-1. **Basic Autoencoder**:
+1. **Basic Autoencoder(MNIST Digit Classifier)**:
    - Implemented on MNIST dataset to learn compressed representations
    - Architecture:
      ```python
@@ -26,6 +26,7 @@ This project implements a complete OCR pipeline combining computer vision and na
                  nn.ReLU(),
                  nn.Linear(256, 784))
      ```
+![image](https://github.com/user-attachments/assets/e80305d9-61f0-48fb-ba03-0acabd81e3a4)
 
 2. **Word Embeddings (Word2Vec)**:
    - Implemented both CBOW and Skip-gram architectures
@@ -34,6 +35,7 @@ This project implements a complete OCR pipeline combining computer vision and na
      - Embedding dimension: 300
      - Window size: 5
      - Negative sampling: 10
+![image](https://github.com/user-attachments/assets/5495798d-e21f-4980-97d9-677f79ab5ded)
 
 3. **Seq2Seq Model**:
    - Built with attention mechanism for text translation
@@ -68,6 +70,7 @@ This project implements a complete OCR pipeline combining computer vision and na
   ```
 ### Phase 3: Text Recognition - CRNN
 **Objective**: Recognize text from detected regions using hybrid CNN-RNN architecture.
+![image](https://github.com/user-attachments/assets/7a28ccf4-421f-4da4-8b80-d935678fe0e4)
 
 **Model Architecture**:
 
@@ -91,4 +94,3 @@ decoded = tf.keras.backend.ctc_decode(
     input_length=np.ones(y_pred.shape[0])*y_pred.shape[1],
     greedy=True)
 ```
-
