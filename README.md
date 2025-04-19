@@ -5,7 +5,7 @@ This project implements a complete OCR pipeline combining computer vision and na
 
 ## Development Timeline & Technical Components
 
-### Phase 1: Foundations (5 weeks)
+### Phase 1: Foundations
 #### Autoencoders and Recurrent Neural Networks
 **Objective**: Establish fundamental understanding of feature extraction and sequential data processing.
 
@@ -47,7 +47,7 @@ This project implements a complete OCR pipeline combining computer vision and na
      ```
    - Achieved BLEU-4 score of 0.58 on English-French translation task
 
-### Phase 2: Text Detection - EAST Model (3 weeks)
+### Phase 2: Text Detection - EAST Model
 **Objective**: Localize text regions in images with arbitrary orientations.
 
 **Technical Implementation**:
@@ -66,7 +66,7 @@ This project implements a complete OCR pipeline combining computer vision and na
       scores, geometry = net.forward(["feature_fusion/Conv_7/Sigmoid",
                                     "feature_fusion/concat_3"])
   ```
-### Phase 3: Text Recognition - CRNN (3 weeks)
+### Phase 3: Text Recognition - CRNN
 **Objective**: Recognize text from detected regions using hybrid CNN-RNN architecture.
 
 **Model Architecture**:
