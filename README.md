@@ -1,4 +1,4 @@
-# Optical Character Recognition System with Deep Learning
+# Optical Character Recognition & It's Applpication in Captcha Scanning
 
 ## Project Overview
 This project implements a complete OCR pipeline combining computer vision and natural language processing techniques. The system detects text regions using the EAST model, recognizes text via CRNN, and optionally translates/summarizes content using sequence-to-sequence models.
@@ -94,3 +94,8 @@ decoded = tf.keras.backend.ctc_decode(
     input_length=np.ones(y_pred.shape[0])*y_pred.shape[1],
     greedy=True)
 ```
+
+![1000019468 gif_2](https://github.com/user-attachments/assets/515c0b88-a657-4ce9-a26c-8a1e1ab67465)
+
+### Phase 4: Translation/Summary of Recognized Text
+**Objective**: Translate or summarize the recognized text using advanced NLP models.
