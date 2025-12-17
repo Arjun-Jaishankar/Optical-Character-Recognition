@@ -1,4 +1,4 @@
-# Optical Character Recognition & It's Applpication in Captcha Scanning
+# Optical Character Recognition & OCR-Based CAPTCHA Solver for Visually Impaired
 
 ## Project Overview
 This project implements a complete OCR pipeline combining computer vision and natural language processing techniques. The system detects text regions using the EAST model, recognizes text via CRNN, and optionally translates/summarizes content using sequence-to-sequence models.
@@ -99,3 +99,28 @@ decoded = tf.keras.backend.ctc_decode(
 
 ### Phase 4: Translation/Summary of Recognized Text
 **Objective**: Translate or summarize the recognized text using advanced NLP models.
+
+<img width="1182" height="568" alt="image" src="https://github.com/user-attachments/assets/5efec597-14b5-4a90-896b-5b7c467ea872" />
+
+**Key Components**:
+- **Spell Correction**: TextBlob + pyspellchecker
+- **Translation**: Helsinki-NLP/opus-mt-en-hi (English→Hindi)
+- **Summarization**: BART-large-CNN / T5 fallback
+
+**Enhanced Results Visualization**:
+- Original texts + Hindi translations + document summary
+- Hindi font support (NotoSansDevanagari)
+
+### Phase 4 Application: NFT CAPTCHA Solver
+**Objective**: Solve CAPTCHAs (arithmetic/text) with accessibility via TTS.
+
+**Dataset**: 19,372 images from 3 sources (arithmetic + alphanumeric)
+- captcha_images_v2 (1K), math-problem-captcha (16K), captcha-v2 (2K)
+
+**Inference Pipeline**:
+1. Load image → CRNN recognition
+2. Arithmetic evaluation (`eval()` for +,- operations)
+3. TTS output via gTTS
+
+**Streamlit Web App** (Local/WSL deployment):
+<img width="1047" height="1427" alt="image" src="https://github.com/user-attachments/assets/6475b1a1-f9d1-49a4-96db-489a45613664" />
